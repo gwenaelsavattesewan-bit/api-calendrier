@@ -10,7 +10,6 @@ app = FastAPI(title="Mon API Calendrier")
 # On instancie le gestionnaire de vacances scolaires
 school_holidays = SchoolHolidayDates()
 
-@app.get("/api/v1/date")
 def calculer_infos_date(date_cible: date):
     jours_semaine = [
         "lundi",
