@@ -58,13 +58,13 @@ def calculer_infos_date(date_cible: date):
 # ==========================================
 
 
-@app.get("/api/date")
+@app.get("/api/v1/date")
 def obtenir_date_du_jour():
     aujourd_hui = date.today()
     return calculer_infos_date(aujourd_hui)
 
 
-@app.get("/api/date/{date_texte}")
+@app.get("/api/v1/date/{date_texte}")
 def obtenir_date_precise(date_texte: str):
     try:
         date_convertie = datetime.strptime(date_texte, "%Y-%m-%d").date()
